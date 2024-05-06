@@ -23,7 +23,8 @@ class ScientificCalculator:
             ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3), (')', 3, 4),
             ('0', 4, 0), ('.', 4, 1), ('=', 4, 2), ('+', 4, 3), ('sin', 4, 4),
             ('cos', 5, 0), ('tan', 5, 1), ('√', 5, 2), ('^', 5, 3), ('π', 5, 4),
-            ('asin', 6, 0), ('acos', 6, 1), ('atan', 6, 2)
+            ('asin', 6, 0), ('acos', 6, 1), ('atan', 6, 2), ('log', 6, 3), ('exp', 6, 4),
+            ('%', 7, 0)
         ]
         
         for (text, row, col) in buttons:
@@ -56,6 +57,12 @@ class ScientificCalculator:
             self.equation += 'math.pi'
         elif value == '^':
             self.equation += '**'
+        elif value == 'log':
+            self.equation += 'math.log('
+        elif value == 'exp':
+            self.equation += 'math.exp('
+        elif value == '%':
+            self.equation += '/100'
         else:
             self.equation += value
         
